@@ -37,10 +37,6 @@ def bot(command):
 	for x in greet:
 		if x == command:
 			reply('Hello Sir')
-	
-	for x in info:
-		if x == command:
-			reply("I am " + botname + ", a virtual assistant program, made in python language, for you")
 			
 	if "What time is it" or "Tell me the time" in command:
 		speak(ctime())
@@ -49,7 +45,7 @@ def bot(command):
 		command = command.split(" ")
 		location = command[2]
 		reply("Hold on, I will check.")
-		chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+		chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s' #change directory to your browser
 		webbrowser.get(chrome_path).open("https://www.google.nl/maps/place/" + location + "/&amp;")
 
 	if 'email' in command:
@@ -80,11 +76,11 @@ def bot(command):
 		speak("Opening")
 
 	if "open my channel" or "open my youtube channel" in command:
-		webbrowser.open("https://www.youtube.com/channel/UCGTIYo3TPAEHVFbY2uU22ig")
+		webbrowser.open("https://www.youtube.com/channel/UCGTIYo3TPAEHVFbY2uU22ig") #change URL to your channel
 		speak("Opening")
 
 	if "open my blog" or "open my website" in command:
-		webbrowser.open("https://www.creeware.blogspot.com/")
+		webbrowser.open("https://www.creeware.blogspot.com/") #change URL to your website
 		speak("Opening")
 	
 	if "open google" in command:
@@ -92,21 +88,12 @@ def bot(command):
 		speak("Opening")
 
 	if 'play songs' in command:
-		music_dir = 'D:\\Songs'
+		music_dir = 'D:\\Songs' #change music_dir to your own directory
 		songs = os.listdir(music_dir)
 		os.startfile(os.path.join(music_dir, songs[0]))
 
 
-reply('Hi, I am Alexa, a virtual assistant program, your desktop companion.\nDo you want to give me a name?')
-quest = input('Type Yes or No: ')
-if quest == 'Yes':
-	speak('Enter a Name for me: ')
-	botname = input('Enter a Name for me: ')
-	reply("Nice name, I will remember it")
-else:
-	botname = "Alexa"
-	reply('Ok, then, we will go with Alexa')
-
+reply('Hi, I am Alexa, a virtual assistant program, your desktop companion.\nHow can I help you?')
 
 while True:
 	command = mic()
