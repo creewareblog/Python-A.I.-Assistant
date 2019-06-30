@@ -1,10 +1,10 @@
-from gtts import gTTS
-import speech_recognition as sr
+from gtts import gTTS #pip install gtts
+import speech_recognition as sr #pip install SpeechRecognition
 import os
 from time import ctime
 import webbrowser
 import smtplib
-import wikipedia
+import wikipedia #pip install wikipedia
 import Database
 
 def speak(audio):
